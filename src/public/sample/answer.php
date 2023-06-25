@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
-use App\Minutes;
+use App\Hours;
 
-$minutes = filter_input(INPUT_POST, 'time');
+$hours = filter_input(INPUT_POST, 'time');
 try {
-    $minutesObj = new Minutes($minutes);
-    $seconds = $minutesObj->toSeconds()->value();
+    $hoursObj = new Hours($hours);
+    $seconds = $hoursObj->toSeconds()->value();
 } catch (\Exception $e) {
     session_start();
     $_SESSION['errorMessage'] = $e->getMessage();
@@ -21,3 +21,9 @@ try {
   <a href="./index.php">Top画面へ</a>
 
 </body>
+
+
+
+
+
+
